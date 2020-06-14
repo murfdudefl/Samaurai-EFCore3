@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Internal;
-using SamuraiApp.Data;
+﻿using SamuraiApp.Data;
 using SamuraiApp.Domain;
 using System;
 using System.Collections.Generic;
@@ -12,6 +11,10 @@ namespace ConsoleApp
     internal class Program
     {
         private static SamuraiContext context = new SamuraiContext();
+
+        //	optionsBuilder
+        //		.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = SamuraiAppData")
+        //		.UseLoggerFactory(ConsoleLoggerFactory);
 
         private static void Main(string[] args)
         {
@@ -28,15 +31,19 @@ namespace ConsoleApp
 
         private static void AddMultipleSamurais()
         {
-            var samurais = new List<Samurai>();
-            samurais.Add(new Samurai() { Name = "Fred" });
-            samurais.Add( new Samurai() { Name = "Grizelda" });
-            samurais.Add(new Samurai() { Name = "Cindy" });
-            samurais.Add( new Samurai() { Name = "Ollie" });
-            samurais.Add(new Samurai() { Name = "Draco" });
-            samurais.Add( new Samurai() { Name = "Harry" });
-            context.Samurais.AddRange(samurais);
-            context.SaveChanges();
+            var busLogic = new BusinessDataLogic();
+            string[] names = { "Fred", "Grizelda", "Cindy", "Ollie", "Draco", "Harry" };
+            var count = busLogic.AddSamurais(names);
+            Console.WriteLine($"Samurais added: {count}");
+            //var samurais = new List<Samurai>();
+            //samurais.Add(new Samurai() { Name = "Fred" });
+            //samurais.Add( new Samurai() { Name = "Grizelda" });
+            //samurais.Add(new Samurai() { Name = "Cindy" });
+            //samurais.Add( new Samurai() { Name = "Ollie" });
+            //samurais.Add(new Samurai() { Name = "Draco" });
+            //samurais.Add( new Samurai() { Name = "Harry" });
+            //context.Samurais.AddRange(samurais);
+            //context.SaveChanges();
         }
 
         private static void GetSomeSamurais()

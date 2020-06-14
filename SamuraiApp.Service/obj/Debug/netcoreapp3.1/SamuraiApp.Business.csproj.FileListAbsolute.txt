@@ -1,0 +1,14 @@
+D:\Learning\SamuraiApp\SamuraiApp.Service\obj\Debug\netcoreapp3.1\SamuraiApp.Business.csprojAssemblyReference.cache
+D:\Learning\SamuraiApp\SamuraiApp.Service\obj\Debug\netcoreapp3.1\SamuraiApp.Business.AssemblyInfoInputs.cache
+D:\Learning\SamuraiApp\SamuraiApp.Service\obj\Debug\netcoreapp3.1\SamuraiApp.Business.AssemblyInfo.cs
+D:\Learning\SamuraiApp\SamuraiApp.Service\bin\Debug\netcoreapp3.1\SamuraiApp.Business.deps.json
+D:\Learning\SamuraiApp\SamuraiApp.Service\bin\Debug\netcoreapp3.1\SamuraiApp.Business.dll
+D:\Learning\SamuraiApp\SamuraiApp.Service\bin\Debug\netcoreapp3.1\SamuraiApp.Business.pdb
+D:\Learning\SamuraiApp\SamuraiApp.Service\bin\Debug\netcoreapp3.1\SamuraiApp.Data.dll
+D:\Learning\SamuraiApp\SamuraiApp.Service\bin\Debug\netcoreapp3.1\SamuraiApp.Domain.dll
+D:\Learning\SamuraiApp\SamuraiApp.Service\bin\Debug\netcoreapp3.1\SamuraiApp.Data.pdb
+D:\Learning\SamuraiApp\SamuraiApp.Service\bin\Debug\netcoreapp3.1\SamuraiApp.Domain.pdb
+D:\Learning\SamuraiApp\SamuraiApp.Service\obj\Debug\netcoreapp3.1\SamuraiApp.Business.csproj.CoreCompileInputs.cache
+D:\Learning\SamuraiApp\SamuraiApp.Service\obj\Debug\netcoreapp3.1\SamuraiApp.Business.csproj.CopyComplete
+D:\Learning\SamuraiApp\SamuraiApp.Service\obj\Debug\netcoreapp3.1\SamuraiApp.Business.dll
+D:\Learning\SamuraiApp\SamuraiApp.Service\obj\Debug\netcoreapp3.1\SamuraiApp.Business.pdb

@@ -14,6 +14,17 @@ namespace SamuraiApp.Data
 		public DbSet<Clan> Clans { get; set; }
 		public DbSet<Battle> Battles { get; set; }
 
+		public SamuraiContext()
+		{
+
+		}
+
+		public SamuraiContext(DbContextOptions options): base(options)
+		{
+			// disable tracking since it will not be utilized in the Asp.net API application
+			//ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+		}
+
 		public static readonly ILoggerFactory ConsoleLoggerFactory =
 			LoggerFactory.Create(builder =>
 		{
@@ -21,15 +32,19 @@ namespace SamuraiApp.Data
 			.AddFilter((category, level) =>
 			category == DbLoggerCategory.Database.Command.Name &&
 			level == LogLevel.Information)
-			.AddConsole();		// will log operations to console - required Microsoft.Extensions.Logging.Console
+			.AddConsole();      // will log operations to console - required Microsoft.Extensions.Logging.Console
 		});
+
+		// method only required for console app
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder
-				.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = SamuraiAppData")
-				.UseLoggerFactory(ConsoleLoggerFactory);
-
+			if(!optionsBuilder.IsConfigured)
+			{
+				optionsBuilder
+					.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = SamuraiAppTestData");
+			}
 		}
+
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<SamuraiBattle>().HasKey(k => new { k.SamuraiId, k.BattleId });
